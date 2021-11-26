@@ -13,6 +13,8 @@ import SavedPosts from './models/SavedPosts.js';
 
 // require("dotenv").config();
 // import VotingRoutes from './VotingRoutes.js';
+import dotenv from "dotenv";
+dotenv.config();
 const secret = 'secret123';
 
 const jwtExpiration = 86400;
