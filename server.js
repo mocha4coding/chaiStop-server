@@ -9,7 +9,7 @@ import jwt from 'jsonwebtoken';
 import Post from "./models/Post.js";
 import Comment from './models/Comment.js';
 import SavedPosts from './models/SavedPosts.js';
-import { DotenvConfigOptions } from 'dotenv';
+// import { DotenvConfigOptions } from 'dotenv';
 
 // require("dotenv").config();
 // import VotingRoutes from './VotingRoutes.js';
