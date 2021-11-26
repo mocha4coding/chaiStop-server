@@ -35,7 +35,7 @@ app.use(cors({
 // app.use(VotingRoutes);
 
 
-await mongoose.connect('mongodb://localhost:27017/forum', {useNewUrlParser:true,useUnifiedTopology:true,});
+await mongoose.connect('mongodb+srv://manisini:sonia24524738@forum.b59y0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser:true,useUnifiedTopology:true,});
 const db = mongoose.connection;
 db.on('error', console.log);
 
