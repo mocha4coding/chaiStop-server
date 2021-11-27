@@ -32,8 +32,8 @@ app.use(cors({
 
 // app.use(VotingRoutes);
 
-
-await mongoose.connect('mongodb+srv://manisini:sonia24524738@forum.b59y0.mongodb.net/forum?retryWrites=true&w=majority', {useNewUrlParser:true,useUnifiedTopology:true,});
+//mongodb+srv://manisini:sonia24524738@forum.b59y0.mongodb.net/forum?retryWrites=true&w=majority
+await mongoose.connect('process.env.MONGODB_URI', {useNewUrlParser:true,useUnifiedTopology:true,});
 //await mongoose.connect('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false', {useNewUrlParser:true,useUnifiedTopology:true,});
 const db = mongoose.connection;
 db.on('error', console.log);
