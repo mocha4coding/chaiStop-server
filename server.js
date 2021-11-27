@@ -9,10 +9,7 @@ import jwt from 'jsonwebtoken';
 import Post from "./models/Post.js";
 import Comment from './models/Comment.js';
 import SavedPosts from './models/SavedPosts.js';
-// import { DotenvConfigOptions } from 'dotenv';
 
-// require("dotenv").config();
-// import VotingRoutes from './VotingRoutes.js';
 import dotenv from "dotenv";
 dotenv.config();
 const secret = 'secret123';
@@ -29,13 +26,15 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cors({
     origin: 'https://chai-stop.herokuapp.com',
+    // origin: 'http://localhost:3000',
     credentials: true,
 }));
 
 // app.use(VotingRoutes);
 
 
-await mongoose.connect('mongodb+srv://manisini:sonia24524738@forum.b59y0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser:true,useUnifiedTopology:true,});
+await mongoose.connect('mongodb+srv://manisini:sonia24524738@forum.b59y0.mongodb.net/forum?retryWrites=true&w=majority', {useNewUrlParser:true,useUnifiedTopology:true,});
+//await mongoose.connect('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false', {useNewUrlParser:true,useUnifiedTopology:true,});
 const db = mongoose.connection;
 db.on('error', console.log);
 
@@ -48,18 +47,6 @@ function getUserFromToken(token){
 }
 
 
-// app.get('/vote/:commentId/:direction', (req, res) => {
-
-//     res.json('ok');
-// });
-
-
-// app.get('/votes/totals/', (req,res) => {
-    
-//     res.json('ok');
-//   });
-  
-
 
 
 app.get('/', (req,res) => {
@@ -67,6 +54,8 @@ app.get('/', (req,res) => {
 })
 
 app.post('/register', (req, res) => {
+    console.log('call made');
+   
     const {email,username} = req.body;
     const password = bcrypt.hashSync(req.body.password, 10);
     const user = new User({email,username,password});
@@ -77,9 +66,11 @@ app.post('/register', (req, res) => {
         }
 
         if(user){
-            res.status(400).send({message: "Username already exists. Try a different one"});
+            
+            return res.status(400).send({message: "Username already exists. Try a different one"});
         }
     })
+    console.log(user);
     user.save().then(user => {
       jwt.sign({id:user._id}, secret,{expiresIn: jwtExpiration}, (err, token) => {
         if (err) {
@@ -324,7 +315,7 @@ app.post('/bookmarks', (req, res) => {
         const token = req.cookies.token;
         
         
-        //console.log({token});
+        console.log({token});
         // const userInfo = jwt.verify(token, secret);
             
         //     User.findById(userInfo.id)
@@ -417,4 +408,4 @@ app.post('/bookmarks', (req, res) => {
 
 
 
-app.listen(process.env.PORT || 4000);
+app.listen(4000);
