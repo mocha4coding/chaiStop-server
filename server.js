@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cors({
     origin: 'https://chai-stop.herokuapp.com',
-    //origin: 'http://localhost:3000',
+   // origin: 'http://localhost:3000',
     credentials: true,
 }));
 
