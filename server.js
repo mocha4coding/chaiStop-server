@@ -191,7 +191,7 @@ app.get('/postthread/:id', (req,res) =>{
 app.post('/postthread', (req,res) => {
 
     const token = req.cookies.token;
-    
+    console.log(token);
     if(!token){
         res.sendStatus(401);
         return;
