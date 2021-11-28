@@ -12,9 +12,9 @@ I built this as project as my entry for Microsoft Engage FTE-2021. This is basic
 
 # Project Links
 This repo is the backend code of the project. You can access the frontend code [here](https://github.com/mocha4coding/ChaiStop-Client). You can visit the repo to see the features of the app or you can visit the link [here](https://docs.google.com/presentation/d/1PHrcAG0TQTwL5AmeAuZXW3z42kIMOZ7wCPHCz1vdPSw/edit?usp=sharing).
-The entire project is live hosted [https://chai-stop.herokuapp.com/](https://chai-stop.herokuapp.com/). The website is not fully responsive yet. Hence please avoid accessing the website on small screens. You can watch the demo video of the project [here](https://drive.google.com/file/d/1Mf4VL4bycc4LKFekrYYhKHkAq6AseYRh/view?usp=sharing). 
+The entire project is live hosted [https://chai-stop.herokuapp.com/](https://chai-stop.herokuapp.com/). The website is not fully responsive yet. Hence please avoid accessing the website on small screens. You can watch the demo video of the project [here](https://vimeo.com/650750647). 
 
-#Project Structure
+# Project Structure
 * server.js : point of entry
 * UserFunctions.js : For retrieving user from tokens
 * models: mongoose database schemas
